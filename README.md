@@ -26,9 +26,7 @@ Local Login plugin for Moodle
 - [License](#license)
 
 # Basic Overview
-
-The Local Login module for Moodle allows users with local login accounts to be able to login URL even if the custom Login URL is pointing to some other place such as an identity management system.
-will not do that for you.
+The Local Login module for Moodle allows users, with local login accounts, such as administrators, to be able to login even if the custom login URL is pointing to some other place such as Oauth2 or other identity management system.
 
 [(Back to top)](#table-of-contents)
 
@@ -157,7 +155,7 @@ http://github.com/michael-milette/moodle-local_login
 
 # License
 
-Copyright © 2019 TNG Consulting Inc. - http://www.tngconsulting.ca/
+Copyright © 2019-2020 TNG Consulting Inc. - http://www.tngconsulting.ca/
 
 This file is part of Local Login for Moodle - http://moodle.org/
 

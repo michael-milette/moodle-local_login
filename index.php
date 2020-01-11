@@ -18,7 +18,7 @@
  * Displays a login form and passes the form submission to Moodle's own login form.
  *
  * @package    local_login
- * @copyright  2019 TNG Consulting Inc. - www.tngconsulting.ca
+ * @copyright  2019-2020 TNG Consulting Inc. - www.tngconsulting.ca
  * @author     Michael Milette
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -30,8 +30,8 @@ $context = context_system::instance();
 $PAGE->set_url("$CFG->wwwroot/local/login/");
 $PAGE->set_context($context);
 $PAGE->set_pagelayout('login');
-$loginsite = get_string("loginsite");
-$PAGE->set_title("$SITE->fullname: $loginsite");
+$logintitle = get_string('login');
+$PAGE->set_title("$SITE->fullname: $logintitle");
 $PAGE->set_heading("$SITE->fullname");
 
 echo $OUTPUT->header();
@@ -53,48 +53,53 @@ if (isloggedin() and !isguestuser()) {
     $form->rememberusername = false;
     $form->cookieshelpiconformatted = '.';
 ?>
-    <div class="loginpanel">
-        <h2><?php echo get_string('login'); ?></h2>
-
-        <div class="subcontent loginsub">
-            <form action="<?php echo $form->loginurl; ?>" method="post" id="login"<?php if(!$form->passwordautocomplete) echo ' autocomplete="off"'; ?>>
-                <div class="loginform">
-                    <input id="anchor" type="hidden" name="anchor" value="<?php echo $form->wwwroot; ?>">
-                    <script>document.getElementById('anchor').value = location.hash;</script>
-                    <input type="hidden" name="logintoken" value="<?php echo s(\core\session\manager::get_login_token()); ?>">
-                    <div class="form-group">
-                        <div class="form-label"><label for="username"><?php echo get_string('username'); ?></label></div>
-                        <div class="form-input"><input type="text" name="username" id="username" size="15" value="<?php echo $form->username; ?>"<?php if(!$form->passwordautocomplete) echo ' autocomplete="username"'; ?>></div>
-                    </div>
-                    <div class="clearer"></div>
-                    <div class="form-group">
-                        <div class="form-label"><label for="password"><?php echo get_string('password'); ?></label></div>
-                        <div class="form-input"><input type="password" name="password" id="password" size="15" value=""<?php if(!$form->passwordautocomplete) echo ' autocomplete="current-password"'; ?>></div>
+	<div class="row justify-content-center">
+        <div class=" col-xl-3 col-lg-4 col-md-5 col-sm-7">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <h2><?php echo get_string('loginsite'); ?></h2>
+                </div>
+                <div class="card-body">
+                    <form action="<?php echo $form->loginurl; ?>" method="post" id="login"<?php if(!$form->passwordautocomplete) echo ' autocomplete="off"'; ?>>
+                        <input id="anchor" type="hidden" name="anchor" value="<?php echo $form->wwwroot; ?>">
+                        <script>document.getElementById('anchor').value = location.hash;</script>
+                        <input type="hidden" name="logintoken" value="<?php echo s(\core\session\manager::get_login_token()); ?>">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <label for="username"><span class="input-group-text"><i class="fa fa-user fa-2x p-1" aria-hidden="true"></i><span class="sr-only"><?php echo get_string('username'); ?></span></span></label>
+                            </div>
+                            <input type="text" name="username" id="username" size="15" class="form-control" value="<?php echo $form->username; ?>" <?php if(!$form->passwordautocomplete) echo ' autocomplete="username"'; ?>>
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <label for="password"><span class="input-group-text"><i class="fa fa-key fa-2x py-1" aria-hidden="true"></i><span class="sr-only"><?php echo get_string('password'); ?></span></span></label>
+                            </div>
+                            <input type="password" name="password" id="password" size="15" class="form-control" <?php if(!$form->passwordautocomplete) echo ' autocomplete="current-password"'; ?>>
+                        </div>
+                        <?php if($form->rememberusername) { ?>
+                            <div class="row align-items-center remember">
+                                <div class="rememberpass xmt-3 pl-5">
+                                    <input type="checkbox" name="rememberusername" id="rememberusername" value="1"<?php if($form->username) echo ' checked="checked"';?>>
+                                    <label for="rememberusername"><?php echo get_string('rememberusername', 'admin'); ?></label>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn btn-primary" id="loginbtn">
+                        </div>
+                    </form>
+                    <div class="d-flex justify-content-center">
+                        <small><a href="<?php echo $form->forgotpasswordurl . '">' . get_string('forgotten'); ?></a></small>
                     </div>
                 </div>
-
-                <div class="clearer"><!-- --></div>
-                <?php if($form->rememberusername) { ?>
-                    <div class="rememberpass mt-3">
-                        <input type="checkbox" name="rememberusername" id="rememberusername" value="1"<?php if($form->username) echo ' checked="checked"';?>>
-                        <label for="rememberusername"><?php echo get_string('rememberusername', 'admin'); ?></label>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center">
+                        <small><?php echo get_string('cookiesenabled') . $form->cookieshelpiconformatted; ?></small>
                     </div>
-                <?php } ?>
-                <div class="clearer"><!-- --></div>
-                <input id="anchor" type="hidden" name="anchor" value="" />
-                <script>document.getElementById('anchor').value = location.hash;</script>
-                <button type="submit" class="btn btn-primary" id="loginbtn">Log in</button>
-                <div class="forgetpass">
-                    <a href="<?php echo $form->forgotpasswordurl . '">' . get_string('forgotten'); ?></a>
                 </div>
-            </form>
-
-            <div class="desc">
-                <?php echo get_string('cookiesenabled') . $form->cookieshelpiconformatted; ?>
             </div>
-
         </div>
-    </div>
+	</div>
 <?php
 }
 echo $OUTPUT->box_end();

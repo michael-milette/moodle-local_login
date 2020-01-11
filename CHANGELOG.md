@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.2] - 2020-01-11
+### Added
+- Forgot password link.
+### Changed
+- Improved the layout of the login form.
+
 ## [0.1.1] - 2019-12-06
 ### Added
 - Initial public release on GitHub.
