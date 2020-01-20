@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.3] - 2020-01-19
+### Changed
+- Improved form layout to make it more accessible.
+
 ## [0.2] - 2020-01-11
 ### Added
 - Forgot password link.

@@ -64,17 +64,19 @@ if (isloggedin() and !isguestuser()) {
                         <input id="anchor" type="hidden" name="anchor" value="<?php echo $form->wwwroot; ?>">
                         <script>document.getElementById('anchor').value = location.hash;</script>
                         <input type="hidden" name="logintoken" value="<?php echo s(\core\session\manager::get_login_token()); ?>">
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <label for="username"><span class="input-group-text"><i class="fa fa-user fa-2x p-1" aria-hidden="true"></i><span class="sr-only"><?php echo get_string('username'); ?></span></span></label>
+                        <div class="form-group">
+                            <label for="username"><?php echo get_string('username'); ?></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-user fa-2x fa-fw p-1" aria-hidden="true"></i></span>
+                                <input type="text" name="username" id="username" size="15" class="form-control" value="<?php echo $form->username; ?>" <?php if(!$form->passwordautocomplete) echo ' autocomplete="username"'; ?>>
                             </div>
-                            <input type="text" name="username" id="username" size="15" class="form-control" value="<?php echo $form->username; ?>" <?php if(!$form->passwordautocomplete) echo ' autocomplete="username"'; ?>>
                         </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <label for="password"><span class="input-group-text"><i class="fa fa-key fa-2x py-1" aria-hidden="true"></i><span class="sr-only"><?php echo get_string('password'); ?></span></span></label>
+                        <div class="form-group">
+                            <label for="password"><?php echo get_string('password'); ?></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-key fa-2x fa-fw p-1" aria-hidden="true"></i></span>
+                                <input type="password" name="password" id="password" size="15" class="form-control" <?php if(!$form->passwordautocomplete) echo ' autocomplete="current-password"'; ?>>
                             </div>
-                            <input type="password" name="password" id="password" size="15" class="form-control" <?php if(!$form->passwordautocomplete) echo ' autocomplete="current-password"'; ?>>
                         </div>
                         <?php if($form->rememberusername) { ?>
                             <div class="row align-items-center remember">

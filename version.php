@@ -26,8 +26,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_login';  // To check on upgrade, that module sits in correct place
-$plugin->version   = 2020011100;        // The current module version (Date: YYYYMMDDXX)
+$plugin->version   = 2020011900;        // The current module version (Date: YYYYMMDDXX)
 $plugin->requires  = 2013040500;        // Requires Moodle version 2.5.
-$plugin->release   = '0.2';
+$plugin->release   = '0.3';
 $plugin->maturity  = MATURITY_ALPHA;
 $plugin->cron      = 0;

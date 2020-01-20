@@ -26,7 +26,9 @@ Local Login plugin for Moodle
 - [License](#license)
 
 # Basic Overview
-The Local Login module for Moodle allows users, with local login accounts, such as administrators, to be able to login even if the custom login URL is pointing to some other place such as Oauth2 or other identity management system.
+The Local Login module for Moodle allows users, with local login accounts, such as administrators, to be able to login even if the custom login URL is pointing to some other page such as Oauth2 or other identity management system. The local login page only offers the option of logging in using a local Moodle account.
+
+This is also an example of how to create a custom login page.
 
 [(Back to top)](#table-of-contents)
 
@@ -90,7 +92,7 @@ Home > Administration > Site Administration > Plugins > Manage plugins > Login
 
 # Limitations
 
-There are no known limitations at this time.
+If you fail to login, you will be taken to the site's normal login page.
 
 [(Back to top)](#table-of-contents)
 
