@@ -36,7 +36,6 @@ $PAGE->set_heading("$SITE->fullname");
 
 echo $OUTPUT->header();
 
-echo $OUTPUT->box_start();
 if (isloggedin() and !isguestuser()) {
     // prevent logging when already logged in, we do not want them to relogin by accident because sesskey would be changed
     $logout = new single_button(new moodle_url('/login/logout.php', array('sesskey'=>sesskey(),'loginpage'=>1)), get_string('logout'), 'post');
@@ -53,57 +52,43 @@ if (isloggedin() and !isguestuser()) {
     $form->rememberusername = false;
     $form->cookieshelpiconformatted = '.';
 ?>
-	<div class="row justify-content-center">
-        <div class=" col-xl-3 col-lg-4 col-md-5 col-sm-7">
-            <div class="card">
-                <div class="card-header bg-warning">
-                    <h2><?php echo get_string('loginsite'); ?></h2>
-                </div>
-                <div class="card-body">
-                    <form action="<?php echo $form->loginurl; ?>" method="post" id="login"<?php if(!$form->passwordautocomplete) echo ' autocomplete="off"'; ?>>
-                        <input id="anchor" type="hidden" name="anchor" value="<?php echo $form->wwwroot; ?>">
-                        <script>document.getElementById('anchor').value = location.hash;</script>
-                        <input type="hidden" name="logintoken" value="<?php echo s(\core\session\manager::get_login_token()); ?>">
-                        <div class="form-group">
-                            <label for="username"><?php echo get_string('username'); ?></label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fa fa-user fa-2x fa-fw p-1" aria-hidden="true"></i></span>
-                                <input type="text" name="username" id="username" size="15" class="form-control" value="<?php echo $form->username; ?>" <?php if(!$form->passwordautocomplete) echo ' autocomplete="username"'; ?>>
+<section>
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-12">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <div classss="col-md-12 col-lg-11 d-flex align-items-center">
+                            <div class="card-body text-black">
+                                <form action="<?php echo $form->loginurl; ?>" method="post" id="locallogin" <?php if (!$form->passwordautocomplete) echo ' autocomplete="off"'; ?>>
+                                    <input id="anchor" type="hidden" name="anchor" value="<?php echo $form->wwwroot; ?>">
+                                    <script>document.getElementById('anchor').value = location.hash;</script>
+                                    <input type="hidden" name="logintoken" value="<?php echo s(\core\session\manager::get_login_token()); ?>">
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <h1 class="h1 fw-bold mb-4"><?php echo get_string('loginsite'); ?></h1>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" id="username"><?php echo get_string('username'); ?></label>
+                                        <input type="text" name="username" id="username" class="form-control form-control-lg" required <?php if(!$form->passwordautocomplete) echo ' autocomplete="username"'; ?>>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" id="password"><?php echo get_string('password'); ?></label>
+                                        <input type="password" name="password" id="password" class="form-control form-control-lg" required <?php if(!$form->passwordautocomplete) echo ' autocomplete="current-password"'; ?>>
+                                    </div>
+                                    <div class="pt-1 mb-4">
+                                        <input type="submit" value="<?php echo get_string('login'); ?>" class="btn btn-primary btn-lg btn-block ml-0" id="loginbtn">
+                                    </div>
+                                    <p class="mb-0"><a class="small text-muted" href="<?php echo $form->forgotpasswordurl . '">' . get_string('forgotten'); ?></a></p>
+                                </form>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="password"><?php echo get_string('password'); ?></label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fa fa-key fa-2x fa-fw p-1" aria-hidden="true"></i></span>
-                                <input type="password" name="password" id="password" size="15" class="form-control" <?php if(!$form->passwordautocomplete) echo ' autocomplete="current-password"'; ?>>
-                            </div>
-                        </div>
-                        <?php if($form->rememberusername) { ?>
-                            <div class="row align-items-center remember">
-                                <div class="rememberpass xmt-3 pl-5">
-                                    <input type="checkbox" name="rememberusername" id="rememberusername" value="1"<?php if($form->username) echo ' checked="checked"';?>>
-                                    <label for="rememberusername"><?php echo get_string('rememberusername', 'admin'); ?></label>
-                                </div>
-                            </div>
-                        <?php } ?>
-                        <div class="form-group">
-                            <input type="submit" value="Login" class="btn btn-primary" id="loginbtn">
-                        </div>
-                    </form>
-                    <div class="d-flex justify-content-center">
-                        <small><a href="<?php echo $form->forgotpasswordurl . '">' . get_string('forgotten'); ?></a></small>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="d-flex justify-content-center">
-                        <small><?php echo get_string('cookiesenabled') . $form->cookieshelpiconformatted; ?></small>
                     </div>
                 </div>
             </div>
         </div>
-	</div>
+    </div>
+</section>
 <?php
 }
-echo $OUTPUT->box_end();
 
 echo $OUTPUT->footer();
