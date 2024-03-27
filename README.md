@@ -2,14 +2,16 @@
 
 Local Login plugin for Moodle
 =================================
-![PHP](https://img.shields.io/badge/PHP-v5.6%20%2F%20v7.0%20%2F%20v7.1%20%2F%20v7.2%20-blue.svg)
-![Moodle](https://img.shields.io/badge/Moodle-v2.5%20to%20v3.8.x-orange.svg)
+![PHP](https://img.shields.io/badge/PHP-v5.6%20to%20v8.2%20-blue.svg)
+![Moodle](https://img.shields.io/badge/Moodle-v3.7%20to%20v4.3.x-orange.svg)
 [![GitHub Issues](https://img.shields.io/github/issues/michael-milette/moodle-local_login.svg)](https://github.com/michael-milette/moodle-local_localissues)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-green.svg)](#contributing)
 [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](#license)
 
 # Table of Contents
 
+- [Local Login plugin for Moodle](#local-login-plugin-for-moodle)
+- [Table of Contents](#table-of-contents)
 - [Basic Overview](#basic-overview)
 - [Requirements](#requirements)
 - [Download Local Login for Moodle](#download-local-login-for-moodle)
@@ -19,8 +21,12 @@ Local Login plugin for Moodle
 - [Uninstallation](#uninstallation)
 - [Limitations](#limitations)
 - [Language Support](#language-support)
-- [Frequently Asked Questions (FAQ)](#faq)
+- [FAQ](#faq)
+    - [Are there any security considerations?](#are-there-any-security-considerations)
+  - [Other questions](#other-questions)
 - [Contributing](#contributing)
+  - [Contributors](#contributors)
+  - [Pending Features](#pending-features)
 - [Motivation for this plugin](#motivation-for-this-plugin)
 - [Further information](#further-information)
 - [License](#license)
@@ -34,7 +40,7 @@ This is also an example of how to create a custom login page.
 
 # Requirements
 
-This plugin requires Moodle 2.5+ from http://moodle.org
+This plugin requires Moodle 3.7+ from https://moodle.org
 
 [(Back to top)](#table-of-contents)
 
@@ -54,7 +60,7 @@ Install the plugin, like any other plugin, to the following folder:
 
     /local/login
 
-See http://docs.moodle.org/en/Installing_plugins for details on installing Moodle plugins.
+See https://docs.moodle.org/en/Installing_plugins for details on installing Moodle plugins.
 
 There are no special considerations required for updating the plugin.
 
@@ -108,7 +114,7 @@ This plugin has not been tested for right-to-left (RTL) language support.
 If you want to use this plugin with a RTL language and it doesn't work as-is,
 feel free to prepare a pull request and submit it to the project page at:
 
-http://github.com/michael-milette/moodle-local_login
+https://github.com/michael-milette/moodle-local_login
 
 [(Back to top)](#table-of-contents)
 
@@ -122,7 +128,7 @@ There are no special security considerations for this plugin.
 
 Got a burning question that is not covered here? If you still can't find your answer, submit your question in the Moodle forums or open a new issue on Github at:
 
-http://github.com/michael-milette/moodle-local_login/issues
+https://github.com/michael-milette/moodle-local_login/issues
 
 [(Back to top)](#table-of-contents)
 
@@ -148,18 +154,17 @@ The development of this plugin was motivated through our own experience in Moodl
 
 # Further information
 
-For further information regarding the local_login plugin, support or to
-report a bug, please visit the project page at:
+For further information regarding the local_login plugin, support or to report a bug, please visit the project page at:
 
-http://github.com/michael-milette/moodle-local_login
+https://github.com/michael-milette/moodle-local_login
 
 [(Back to top)](#table-of-contents)
 
 # License
 
-Copyright © 2019-2020 TNG Consulting Inc. - http://www.tngconsulting.ca/
+Copyright © 2019-2024 TNG Consulting Inc. - https://www.tngconsulting.ca/
 
-This file is part of Local Login for Moodle - http://moodle.org/
+This file is part of Local Login for Moodle - https://moodle.org/
 
 Local Login is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -172,6 +177,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Local Login.  If not, see <http://www.gnu.org/licenses/>.
+along with Local Login.  If not, see <https://www.gnu.org/licenses/>.
 
 [(Back to top)](#table-of-contents)

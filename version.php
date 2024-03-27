@@ -1,5 +1,5 @@
 <?php
-// This file is part of the Local Login plugin for Moodle - http://moodle.org/
+// This file is part of the Local Login plugin for Moodle - https://moodle.org/
 //
 // Local Login is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,22 +12,22 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Version information for Local Login.
  *
  * @package    local_login
- * @copyright  2019-2020 TNG Consulting Inc. - www.tngconsulting.ca
+ * @copyright  2019-2024 TNG Consulting Inc. - www.tngconsulting.ca
  * @author     Michael Milette
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_login';  // To check on upgrade, that module sits in correct place
-$plugin->version   = 2020011900;        // The current module version (Date: YYYYMMDDXX)
-$plugin->requires  = 2013040500;        // Requires Moodle version 2.5.
-$plugin->release   = '0.3';
-$plugin->maturity  = MATURITY_ALPHA;
+$plugin->version   = 2024032600;        // The current module version (Date: YYYYMMDDXX)
+$plugin->requires  = 2019052000;        // Requires Moodle version 3.7.
+$plugin->release   = '0.4';
+$plugin->maturity  = MATURITY_BETA;
 $plugin->cron      = 0;

@@ -1,5 +1,5 @@
 <?php
-// This file is part of Local Login plugin for Moodle - http://moodle.org/
+// This file is part of Local Login plugin for Moodle - https://moodle.org/
 //
 // Local Login is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Local Login.  If not, see <http://www.gnu.org/licenses/>.
+// along with Local Login.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Strings for component 'local_login', language 'en', branch 'MOODLE_20_STABLE'
@@ -20,12 +20,12 @@
  * @package    local_login
  * @copyright  2019 TNG Consulting Inc. - www.tngconsulting.ca
  * @author     Michael Milette
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Local Login';
 $string['pluginname_help'] = 'Local Login will let you login locally even when you are using the alternate login URL.';
-$string['credit'] = 'Michael Milette - <a href="http://www.tngconsulting.ca/">TNG Consulting Inc.</a>';
+$string['credit'] = 'Michael Milette - <a href="https://www.tngconsulting.ca/">TNG Consulting Inc.</a>';
 $string['privacy:metadata'] = 'The Local Login plugin does not store any personal data about any user.';

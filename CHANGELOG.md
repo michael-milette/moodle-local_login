@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.4] - 2024-03-26
+### Changed
+- Improved layout for better compatibility with Moodle 4.x.
+- Removed hard coded text. Now using get_string function calls instead.
+- Updated README.md.
+- Compatible with PHP 7.1 to 8.2.
+- Updated link references to use https.
+- Upgraded maturity from ALPHA to BETA.
+- Updated copyright notice for 2024.
+
 ## [0.3] - 2020-01-19
 ### Changed
 - Improved form layout to make it more accessible.
