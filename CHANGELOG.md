@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.5] - 2024-06-19
+### Changed
+- Moved HTML into mustache template.
+- Fixed alignment of the login form.
+- Fixed accessibility issue with form labels.
+- Compatible with PHP 5.6 to 8.3.
+- Compatible with Moodle 4.4.
+
 ## [0.4] - 2024-03-26
 ### Changed
 - Improved layout for better compatibility with Moodle 4.x.

@@ -1,0 +1,83 @@
+{{!
+    This file is part of the Local Login plugin for Moodle - https://moodle.org/
+
+    Local Login is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Local Login is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_login/login_form
+
+    Local_login login form template.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * loginurl: The URL that the form should submit to.
+    * passwordautocomplete: A boolean value that determines whether the `autocomplete` attribute should be added to the password input field.
+    * wwwroot: The root URL of your Moodle site.
+    * logintoken: A security token that is included as a hidden input field in the form.
+    * str: An associative array of localized strings.
+    * forgotpasswordurl: The URL that the "Forgotten your username or password?" link should point to.
+
+    Example context (json):
+    {
+        "loginurl": "https://mysite.com/login/index.php",
+        "passwordautocomplete": false,
+        "wwwroot": "https://mysite.com",
+        "logintoken": s(\core\session\manager::get_login_token()),
+        "loginsite": "Login to the site",
+        "username": "Username",
+        "password": "Password",
+        "login": "Log in",
+        "forgotten": "Forgot your username or password?",
+        "forgotpasswordurl": "https://mysite.com/login/forgot_password.php"
+    }
+}}
+<section id="local-login">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-12">
+                <div class="card" style="border-radius: 1rem;">
+                    <div classss="col-md-12 col-lg-11 d-flex align-items-center">
+                        <div class="card-body text-black">
+                            <form action="{{loginurl}}" method="post" id="locallogin" {{#passwordautocomplete}} autocomplete="off" {{/passwordautocomplete}}>
+                                <input id="anchor" type="hidden" name="anchor" value="{{wwwroot}}">
+                                <script>document.getElementById('anchor').value = location.hash;</script>
+                                <input type="hidden" name="logintoken" value="{{logintoken}}">
+                                <div class="d-flex align-items-center mb-3 pb-1">
+                                    <h1 class="h1 fw-bold mb-4">{{#str}}loginsite{{/str}}</h1>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="username">{{#str}}username{{/str}}</label>
+                                    <input type="text" name="username" id="username" class="form-control form-control-lg fadeIn second" required {{#passwordautocomplete}} autocomplete="username" {{/passwordautocomplete}}>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="password">{{#str}}password{{/str}}</label>
+                                    <input type="password" name="password" id="password" class="form-control form-control-lg" required {{#passwordautocomplete}} autocomplete="current-password" {{/passwordautocomplete}}>
+                                </div>
+                                <div class="pt-1 mb-4">
+                                    <input type="submit" value="{{#str}}login{{/str}}" class="btn btn-primary btn-lg btn-block ml-0" id="loginbtn">
+                                </div>
+                                <p class="mb-0"><a class="small text-muted" href="{{forgotpasswordurl}}">{{#str}}forgotten{{/str}}</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

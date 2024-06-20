@@ -2,8 +2,8 @@
 
 Local Login plugin for Moodle
 =================================
-![PHP](https://img.shields.io/badge/PHP-v5.6%20to%20v8.2%20-blue.svg)
-![Moodle](https://img.shields.io/badge/Moodle-v3.7%20to%20v4.3.x-orange.svg)
+![PHP](https://img.shields.io/badge/PHP-v5.6%20to%20v8.3%20-blue.svg)
+![Moodle](https://img.shields.io/badge/Moodle-v3.7%20to%20v4.4.x-orange.svg)
 [![GitHub Issues](https://img.shields.io/github/issues/michael-milette/moodle-local_login.svg)](https://github.com/michael-milette/moodle-local_localissues)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-green.svg)](#contributing)
 [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](#license)
