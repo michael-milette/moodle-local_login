@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.5.1] - 2024-07-21
+### Changed
+- Version number is now prefixed with a "1" to avoid updae notification conflict with a plugin of same name available on moodle.org.
+
 ## [0.5] - 2024-06-19
 ### Changed
 - Moved HTML into mustache template.
