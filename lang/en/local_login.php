@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$string['credit'] = 'Michael Milette - <a href="https://www.tngconsulting.ca/">TNG Consulting Inc.</a>';
 $string['pluginname'] = 'Local Login';
 $string['pluginname_help'] = 'Local Login will let you login locally even when you are using the alternate login URL.';
-$string['credit'] = 'Michael Milette - <a href="https://www.tngconsulting.ca/">TNG Consulting Inc.</a>';
 $string['privacy:metadata'] = 'The Local Login plugin does not store any personal data about any user.';

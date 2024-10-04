@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.5.1] - 2024-10-03
+- Corrected minor coding guidelines issue.
+- No code changes. No change in version.
+
 ## [0.5.1] - 2024-07-21
 ### Changed
 - Version number is now prefixed with a "1" to avoid updae notification conflict with a plugin of same name available on moodle.org.
