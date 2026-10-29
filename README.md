@@ -51,9 +51,6 @@ This plugin requires Moodle 3.7+ from https://moodle.org
 **IMPORTANT: This is NOT THE SAME as the local_login plugin in the Moodle.org plugin repository.**
 https://moodle.org/plugins/local_login
 
-The most development release can be found at:
-https://github.com/michael-milette/moodle-local_login
-
 [(Back to top)](#table-of-contents)
 
 # Installation
