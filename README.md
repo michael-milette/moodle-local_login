@@ -46,7 +46,9 @@ This plugin requires Moodle 3.7+ from https://moodle.org
 
 # Download Local Login for Moodle
 
-The most recent STABLE release of Local Login for Moodle is available from:
+**This is** the most recent STABLE release of Local Login for Moodle.
+
+**IMPORTANT: This is NOT THE SAME as the local_login plugin in the Moodle.org plugin repository.**
 https://moodle.org/plugins/local_login
 
 The most development release can be found at:
